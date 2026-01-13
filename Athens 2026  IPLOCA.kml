@@ -1,13 +1,404 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
-  <Document>
-    <name>Athens 2026 | IPLOCA</name>
-    <description>This map shows the important place for the IPLOCA Convention 2026</description>
-    <NetworkLink>
-      <name>Athens 2026 | IPLOCA</name>
-      <Link>
-        <href><![CDATA[https://www.google.com/maps/d/kml?forcekml=1&mid=1FrudduuS0Zo-OFeb87QxYIOn_1NqQFI]]></href>
-      </Link>
-    </NetworkLink>
-  </Document>
-</kml>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Athènes 2026 - Convention IPLOCA</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .header {
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .header p {
+      margin: 8px 0 0 0;
+      opacity: 0.95;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .map-controls {
+      padding: 20px;
+      background: #fafafa;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .controls-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls-title {
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #555;
+    }
+
+    .layer-toggle {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .layer-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .layer-item input {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      accent-color: #667eea;
+    }
+
+    .layer-item label {
+      cursor: pointer;
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+      user-select: none;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #e8f5e9;
+      border-radius: 20px;
+      font-size: 12px;
+      color: #2e7d32;
+      font-weight: 500;
+    }
+
+    .status-badge.loading {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .status-badge.error {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    .map-wrapper {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    #map {
+      flex: 1;
+      min-height: 600px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .legend {
+      width: 280px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+      height: fit-content;
+    }
+
+    .legend h3 {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .legend-item:last-child {
+      border-bottom: none;
+    }
+
+    .legend-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .legend-text {
+      font-size: 13px;
+      color: #555;
+    }
+
+    @media (max-width: 1200px) {
+      .map-wrapper {
+        flex-direction: column;
+      }
+
+      .legend {
+        width: 100%;
+        order: -1;
+      }
+
+      #map {
+        min-height: 500px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .map-controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .attribution {
+      padding: 16px 20px;
+      background: #f9f9f9;
+      border-top: 1px solid #e8e8e8;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📍 Athènes 2026 - Convention IPLOCA</h1>
+      <p>Carte interactive avec vos points d'intérêt et style personnalisé</p>
+    </div>
+
+    <div class="map-controls">
+      <div class="controls-section">
+        <div class="controls-title">🗺️ Couches</div>
+        <div class="layer-toggle" id="layerControls"></div>
+      </div>
+      <div class="controls-section">
+        <div class="controls-title">📊 Statut</div>
+        <div class="status-badge loading" id="statusBadge">
+          <span>⏳</span>
+          <span id="statusText">Chargement...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-wrapper">
+      <div id="map"></div>
+      <div class="legend">
+        <h3>🗂️ Catégories</h3>
+        <div class="legend-item">
+          <div class="legend-icon">🏨</div>
+          <div class="legend-text">Hotels</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-icon">🍽️</div>
+          <div class="legend-text">Restaurants</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-icon">🏛️</div>
+          <div class="legend-text">Museums</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-icon">🚇</div>
+          <div class="legend-text">Transport</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-icon">📍</div>
+          <div class="legend-text">Venues</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Google Maps Platform + KML Layer | Map ID: 7888dca0e690769512d6849e
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6G7n32EWZsG5zrmAPbJbeZjMXDp0pqJE&callback=initMap" async defer></script>
+  <script>
+    let map;
+    let kmlLayers = {};
+    const layerControls = document.getElementById("layerControls");
+    const statusBadge = document.getElementById("statusBadge");
+    const statusText = document.getElementById("statusText");
+
+    // URL du KML - lien public GitHub
+    let kmlUrl = "https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/refs/heads/main/doc.kml";
+
+    function updateStatus(text, type = "loading") {
+      statusText.textContent = text;
+      statusBadge.className = `status-badge ${type}`;
+
+      const icons = {
+        loading: "⏳",
+        success: "✅",
+        error: "❌",
+        warning: "⚠️"
+      };
+
+      statusBadge.innerHTML = `<span>${icons[type]}</span><span>${text}</span>`;
+    }
+
+    function initMap() {
+      const athensCoords = { lat: 37.9795, lng: 23.7162 };
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: athensCoords,
+        zoom: 12,
+        mapId: "7888dca0e690769512d6849e",
+        mapTypeControl: true,
+        fullscreenControl: true,
+        zoomControl: true
+      });
+
+      loadKmlLayer(kmlUrl);
+    }
+
+    function loadKmlLayer(url) {
+      updateStatus("Chargement du KML...", "loading");
+
+      try {
+        const kmlLayer = new google.maps.KmlLayer({
+          url: url,
+          map: map,
+          suppressInfoWindows: false,
+          preserveViewport: false
+        });
+
+        const statusListener = google.maps.event.addListener(
+          kmlLayer,
+          "status_changed",
+          function () {
+            const status = kmlLayer.getStatus();
+            handleKmlStatus(status, kmlLayer);
+            google.maps.event.removeListener(statusListener);
+          }
+        );
+
+        google.maps.event.addListener(kmlLayer, "click", function (event) {
+          const name = event.featureData.name || "Sans nom";
+          const description = event.featureData.description || "";
+        });
+
+        kmlLayers["principal"] = kmlLayer;
+        createLayerToggle("principal", "Points d'intérêt (KML)");
+
+        setTimeout(() => {
+          if (kmlLayer.getDefaultViewport()) {
+            map.fitBounds(kmlLayer.getDefaultViewport());
+          }
+        }, 1000);
+      } catch (error) {
+        updateStatus("Erreur lors du chargement", "error");
+      }
+    }
+
+    function handleKmlStatus(status, kmlLayer) {
+      switch (status) {
+        case google.maps.KmlLayerStatus.OK:
+          updateStatus("KML chargé", "success");
+          break;
+
+        case google.maps.KmlLayerStatus.INVALID_REQUEST:
+          updateStatus("Requête invalide", "error");
+          break;
+
+        case google.maps.KmlLayerStatus.INVALID_DOCUMENT:
+          updateStatus("KML invalide", "error");
+          break;
+
+        case google.maps.KmlLayerStatus.FILE_NOT_FOUND:
+          updateStatus("Fichier non trouvé", "error");
+          break;
+
+        case google.maps.KmlLayerStatus.QUOTA_EXCEEDED:
+          updateStatus("Quota dépassé", "error");
+          break;
+
+        case google.maps.KmlLayerStatus.UNKNOWN_ERROR:
+          updateStatus("Erreur inconnue", "error");
+          break;
+      }
+    }
+
+    function createLayerToggle(layerId, layerName) {
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.id = `toggle-${layerId}`;
+      checkbox.checked = true;
+
+      const label = document.createElement("label");
+      label.htmlFor = `toggle-${layerId}`;
+      label.textContent = layerName;
+
+      const container = document.createElement("div");
+      container.className = "layer-item";
+      container.appendChild(checkbox);
+      container.appendChild(label);
+
+      layerControls.appendChild(container);
+
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          kmlLayers[layerId].setMap(map);
+        } else {
+          kmlLayers[layerId].setMap(null);
+        }
+      });
+    }
+
+    window.initMap = initMap;
+  </script>
+</body>
+</html>
