@@ -273,6 +273,35 @@
         <text><![CDATA[<h3>$[name]</h3>]]></text>
       </BalloonStyle>
     </Style>
+<!-- AIRPORT ICON (Plane) -->
+<Style id="icon-plane-nodesc-normal">
+  <IconStyle>
+    <color>ff7e231a</color>
+    <scale>1</scale>
+    <Icon>
+      <href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/c1f7646318660d2c6d5395e820f684b1cdfe57a9/Plane_nobg.png</href>
+    </Icon>
+  </IconStyle>
+  <LabelStyle><scale>0</scale></LabelStyle>
+  <BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+<Style id="icon-plane-nodesc-highlight">
+  <IconStyle>
+    <color>ff7e231a</color>
+    <scale>1</scale>
+    <Icon>
+      <href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/c1f7646318660d2c6d5395e820f684b1cdfe57a9/Plane_nobg.png</href>
+    </Icon>
+  </IconStyle>
+  <LabelStyle><scale>1</scale></LabelStyle>
+  <BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-plane-nodesc">
+  <Pair><key>normal</key><styleUrl>#icon-plane-nodesc-normal</styleUrl></Pair>
+  <Pair><key>highlight</key><styleUrl>#icon-plane-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
     <StyleMap id="icon-1681-097138-nodesc">
       <Pair>
         <key>normal</key>
@@ -370,14 +399,10 @@
     <Folder>
       <name>Main places</name>
       <Placemark>
-        <name><![CDATA[Athens International Airport "Eleftherios Venizelos"]]></name>
-        <styleUrl>#icon-1504-1A237E-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            23.9477271,37.9415988,0
-          </coordinates>
-        </Point>
-      </Placemark>
+  <name>Athens International Airport "Eleftherios Venizelos"</name>
+  <styleUrl>#icon-plane-nodesc</styleUrl>
+  <Point><coordinates>23.9477271,37.9415988,0</coordinates></Point>
+</Placemark>
       <Placemark>
         <name>InterContinental Athenaeum Athens by IHG</name>
         <styleUrl>#icon-1602-1A237E-nodesc</styleUrl>
