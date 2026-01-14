@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Athens 2026 | IPLOCA</name>
+<description>This map shows the important place for the IPLOCA Convention 2026</description>
+
+<!-- HOTEL ICON -->
+<Style id="icon-1504-1A237E-nodesc-normal">
+<IconStyle>
+<color>ff7e231a</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Hotels_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1504-1A237E-nodesc-highlight">
+<IconStyle>
+<color>ff7e231a</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Hotels_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1504-1A237E-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1504-1A237E-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1504-1A237E-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- DINNER ICON (teal) -->
+<Style id="icon-1517-006064-nodesc-normal">
+<IconStyle>
+<color>ff646000</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Dinner_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1517-006064-nodesc-highlight">
+<IconStyle>
+<color>ff646000</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Dinner_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1517-006064-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1517-006064-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1517-006064-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- DINNER ICON (green) -->
+<Style id="icon-1517-097138-nodesc-normal">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Dinner_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1517-097138-nodesc-highlight">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Dinner_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1517-097138-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1517-097138-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1517-097138-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- ACTIVITY/GOLF ICON -->
+<Style id="icon-1585-097138-nodesc-normal">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Golf_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1585-097138-nodesc-highlight">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Golf_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1585-097138-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1585-097138-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1585-097138-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- PLACES/SITES ICON (Ancient) -->
+<Style id="icon-1598-097138-nodesc-normal">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Ancient_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1598-097138-nodesc-highlight">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Ancient_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1598-097138-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1598-097138-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1598-097138-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- HOTEL ICON -->
+<Style id="icon-1602-1A237E-nodesc-normal">
+<IconStyle>
+<color>ff7e231a</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Hotels_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1602-1A237E-nodesc-highlight">
+<IconStyle>
+<color>ff7e231a</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Hotels_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1602-1A237E-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1602-1A237E-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1602-1A237E-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- MUSEUM ICON -->
+<Style id="icon-1636-097138-nodesc-normal">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Museum_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1636-097138-nodesc-highlight">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Museum_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1636-097138-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1636-097138-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1636-097138-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- ISLAND ICON (Boat) -->
+<Style id="icon-1681-097138-nodesc-normal">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Boat_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-1681-097138-nodesc-highlight">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Boat_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-1681-097138-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-1681-097138-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-1681-097138-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- AIRPORT ICON (Plane) - NEW STYLE -->
+<Style id="icon-airport-nodesc-normal">
+<IconStyle>
+<color>ff7e231a</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Plane_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-airport-nodesc-highlight">
+<IconStyle>
+<color>ff7e231a</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Plane_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-airport-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-airport-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-airport-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- COOK ICON - NEW STYLE -->
+<Style id="icon-cook-nodesc-normal">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Cook_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>0</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<Style id="icon-cook-nodesc-highlight">
+<IconStyle>
+<color>ff387109</color>
+<scale>1</scale>
+<Icon>
+<href>https://raw.githubusercontent.com/cyriaccouvas/athens-2026-map/main/Cook_nobg.png</href>
+</Icon>
+</IconStyle>
+<LabelStyle><scale>1</scale></LabelStyle>
+<BalloonStyle><text><![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+</Style>
+
+<StyleMap id="icon-cook-nodesc">
+<Pair><key>normal</key><styleUrl>#icon-cook-nodesc-normal</styleUrl></Pair>
+<Pair><key>highlight</key><styleUrl>#icon-cook-nodesc-highlight</styleUrl></Pair>
+</StyleMap>
+
+<!-- PLACEMARKS -->
+<Folder>
+<name>Activities</name>
+<Placemark><name>Acropolis Museum</name><styleUrl>#icon-1636-097138-nodesc</styleUrl><Point><coordinates>23.7285227,37.9684499,0</coordinates></Point></Placemark>
+<Placemark><name>Plaka</name><styleUrl>#icon-1517-097138-nodesc</styleUrl><Point><coordinates>23.7303364,37.9725529,0</coordinates></Point></Placemark>
+<Placemark><name>Acropolis</name><styleUrl>#icon-1598-097138-nodesc</styleUrl><Point><coordinates>23.7257491,37.9715323,0</coordinates></Point></Placemark>
+<Placemark><name>National Archaeological Museum</name><styleUrl>#icon-1636-097138-nodesc</styleUrl><Point><coordinates>23.7327599,37.9890229,0</coordinates></Point></Placemark>
+<Placemark><name>Ancient Agora of Athens</name><styleUrl>#icon-1598-097138-nodesc</styleUrl><Point><coordinates>23.7220933,37.974897,0</coordinates></Point></Placemark>
+<Placemark><name>Ancient Corinth</name><styleUrl>#icon-1598-097138-nodesc</styleUrl><Point><coordinates>22.8778733,37.9057436,0</coordinates></Point></Placemark>
+<Placemark><name>Aegina</name><styleUrl>#icon-1681-097138-nodesc</styleUrl><Point><coordinates>23.4336082,37.7423921,0</coordinates></Point></Placemark>
+<Placemark><name>Glyfada Golf Club of Athens</name><styleUrl>#icon-1585-097138-nodesc</styleUrl><Point><coordinates>23.7437138,37.876626,0</coordinates></Point></Placemark>
+<Placemark><name>ASTERIA GLYFADA [DOMUS]</name><styleUrl>#icon-1517-097138-nodesc</styleUrl><Point><coordinates>23.7503785,37.8600115,0</coordinates></Point></Placemark>
+<Placemark><name>Ble Pavillon &amp; Ble Azure</name><styleUrl>#icon-1517-006064-nodesc</styleUrl><Point><coordinates>23.716643,37.9052416,0</coordinates></Point></Placemark>
+<Placemark><name>Island Private House lily lambropoulos Delphi riddle</name><styleUrl>#icon-cook-nodesc</styleUrl><Point><coordinates>23.7994571,37.8073917,0</coordinates></Point></Placemark>
+</Folder>
+
+<Folder>
+<name>Main places</name>
+<Placemark><name>Athens International Airport "Eleftherios Venizelos"</name><styleUrl>#icon-airport-nodesc</styleUrl><Point><coordinates>23.9477271,37.9415988,0</coordinates></Point></Placemark>
+<Placemark><name>InterContinental Athenaeum Athens by IHG</name><styleUrl>#icon-1602-1A237E-nodesc</styleUrl><Point><coordinates>23.7217644,37.9595518,0</coordinates></Point></Placemark>
+</Folder>
+
+</Document>
+</kml>
